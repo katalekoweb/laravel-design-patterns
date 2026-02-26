@@ -19,7 +19,7 @@ const form = useForm({
 });
 
 const saveExpense = () => {
-    if (props.expense.id) {
+    if (props.expense?.id) {
         form.put(route('expenses.update', props.expense.id));
     } else {
         form.post(route('expenses.store'));

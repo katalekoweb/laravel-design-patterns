@@ -9,6 +9,12 @@ const props = defineProps({
 
 const form = useForm();
 
+const deleteRecord = (id) => {
+    if (confirm('Tem certeza que deseja excluir este gasto?')) {
+        form.delete(route('expenses.destroy', id));
+    }
+};
+
 </script>
 
 <template>
@@ -35,7 +41,7 @@ const form = useForm();
                             <table class="w-full">
                                 <thead>
                                     <tr
-                                        class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
+                                        class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-300">
                                         <th class="px-4 py-3">Título</th>
                                         <th class="px-4 py-3">Valor</th>
                                         <th class="px-4 py-3">Ações</th>
@@ -53,8 +59,7 @@ const form = useForm();
                                         <td class="px-4 py-3 border-b border-gray-200 dark:border-gray-700">
                                             <Link :href="route('expenses.edit', expense.id)"
                                                 class="text-blue-500 hover:text-blue-700">Editar</Link>
-                                            <PrimaryButton @click="form.delete(route('expenses.destroy', expense.id))"
-                                                class="ml-2">Excluir</PrimaryButton>
+                                            <button @click="deleteRecord(expense.id)" class="ml-2">Excluir</button>
                                         </td>
                                     </tr>
                                 </tbody>
