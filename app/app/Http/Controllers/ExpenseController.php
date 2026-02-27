@@ -5,20 +5,21 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ExpenseRequest;
 use App\Interfaces\ExpenseInterface;
 use App\Models\Expense;
+use App\Services\ExpenseService;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response as InertiaResponse;
 
 class ExpenseController extends Controller
 {
-    function __construct(public ExpenseInterface $expenseInterface) {}
+    function __construct(public ExpenseService $expenseService) {}
 
     /**
      * Display a listing of the resource.
      */
     public function index(): InertiaResponse
     {
-        $expenses = $this->expenseInterface->getExpenses();
+        $expenses = $this->expenseService->getExpenses();
         return Inertia::render('Expenses/Index', compact("expenses"));
     }
 
@@ -35,7 +36,7 @@ class ExpenseController extends Controller
      */
     public function store(ExpenseRequest $request)
     {
-        $expense = $this->expenseInterface->saveExpense($request);
+        $expense = $this->expenseService->saveExpense($request);
 
         if ($expense) return redirect()->route('expenses.index')->with('success', 'Gasto registrado exitosamente');
         return redirect()->route('expenses.index')->with('error', 'O registo de um gasto falhou');
@@ -62,7 +63,7 @@ class ExpenseController extends Controller
      */
     public function update(ExpenseRequest $request, Expense $expense)
     {
-        $expense = $this->expenseInterface->updateExpense($request, $expense);
+        $expense = $this->expenseService->updateExpense($request, $expense);
         if ($expense) return redirect()->route('expenses.index')->with('success', 'Gasto atualizado exitosamente');
         return redirect()->route('expenses.index')->with('error', 'A atualização de um gasto falhou');
     }
@@ -72,7 +73,7 @@ class ExpenseController extends Controller
      */
     public function destroy(Expense $expense)
     {
-        $deleted = $this->expenseInterface->deleteExpense($expense);
+        $deleted = $this->expenseService->deleteExpense($expense);
         if ($deleted) return redirect()->route('expenses.index')->with('success', 'Gasto deletado exitosamente');
         return redirect()->route('expenses.index')->with('error', 'A exclusão de um gasto falhou');
     }

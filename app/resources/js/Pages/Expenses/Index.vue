@@ -25,7 +25,7 @@ const deleteRecord = (id) => {
         <template #header>
             <div class="flex items-center justify-between">
                 <h2 class="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">
-                    Controle de Gastos
+                    Controle de Gastos com repository e service pattern
                 </h2>
                 <div>
                     <Link :href="route('expenses.create')" class="ml-4 inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 active:bg-gray-900 disabled:opacity-25 transition">Adicionar Gasto</Link>
@@ -41,7 +41,7 @@ const deleteRecord = (id) => {
                             <table class="w-full">
                                 <thead>
                                     <tr
-                                        class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-300">
+                                        class="text-md font-semibold tracking-wide text-left text-gray-900 bg-white border-t border-gray-300 uppercase border-b border-gray-300">
                                         <th class="px-4 py-3">Título</th>
                                         <th class="px-4 py-3">Valor</th>
                                         <th class="px-4 py-3">Ações</th>
@@ -49,7 +49,7 @@ const deleteRecord = (id) => {
                                 </thead>
                                 <tbody>
                                     <tr v-for="expense in expenses" :key="expense.id"
-                                        class=" odd:bg-slate-100 even:bg-slate-200">
+                                        class=" odd:bg-slate-100 even:bg-white">
                                         <td class="px-4 py-3 border-b border-gray-200 dark:border-gray-700">{{
                                             expense.title }}
                                         </td>
