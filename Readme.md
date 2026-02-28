@@ -13,3 +13,8 @@ tornando-o mais fácil de entender, manter e escalar.
  - Melhoria da comunicação: O uso de Design Patterns facilita a comunicação entre os membros da equipe, pois eles fornecem uma linguagem comum para descrever soluções de design. Isso ajuda a evitar mal
  - Melhoria de Performance: Alguns Design Patterns, como o Singleton, podem melhorar a performance do software ao evitar a criação de múltiplas instâncias de uma classe. Isso pode ser especialmente útil em casos onde a criação de objetos é custosa em termos de recursos.
  - Redução de bugs: Ao seguir os Design Patterns, os desenvolvedores podem evitar erros
+
+ ## Paterns abordados nesse projeto
+ - Repository Pattern
+ - Service Pattern
+ - Observer Pattern
