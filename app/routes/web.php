@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SingletonController;
+use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -25,6 +27,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::resource('expenses', ExpenseController::class);
+    Route::resource('users', UserController::class);
+    Route::get('/singleton', [SingletonController::class, 'singleExample'])->name('singleton.example');
 });
 
 require __DIR__.'/auth.php';

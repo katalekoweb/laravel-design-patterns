@@ -34,6 +34,9 @@ const showingNavigationDropdown = ref(false);
                                 <NavLink :href="route('expenses.index')" :active="route().current('expenses.*')">
                                     Gastos
                                 </NavLink>
+                                <NavLink :href="route('users.index')" :active="route().current('users.*')">
+                                    Usuários
+                                </NavLink>
                             </div>
                         </div>
 

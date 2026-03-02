@@ -18,3 +18,13 @@ tornando-o mais fácil de entender, manter e escalar.
  - Repository Pattern
  - Service Pattern
  - Observer Pattern
+
+ ### Singleton Pattern
+ O Singleton é um padrão de design que garante que uma classe tenha apenas uma instância e 
+ fornece um ponto global de acesso a essa instância. Ele é útil quando é necessário controlar 
+ o acesso a um recurso compartilhado, como uma conexão de banco de dados ou um gerenciador 
+ de configuração. O Singleton é implementado criando uma classe com um construtor privado 
+ e um método estático que retorna a instância única da classe. Isso garante que apenas 
+ uma instância seja criada e que ela possa ser acessada de qualquer lugar do código. 
+ O Singleton é amplamente utilizado em projetos de software para garantir a 
+ consistência e a eficiência no uso de recursos compartilhados.
