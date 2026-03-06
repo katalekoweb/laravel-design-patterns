@@ -28,3 +28,6 @@ tornando-o mais fácil de entender, manter e escalar.
  uma instância seja criada e que ela possa ser acessada de qualquer lugar do código. 
  O Singleton é amplamente utilizado em projetos de software para garantir a 
  consistência e a eficiência no uso de recursos compartilhados.
+
+ ## Strategy pattern
+ 

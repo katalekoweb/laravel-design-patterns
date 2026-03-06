@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ExpenseController;
+use App\Http\Controllers\GreetingController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SingletonController;
 use App\Http\Controllers\UserController;
@@ -29,6 +30,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('expenses', ExpenseController::class);
     Route::resource('users', UserController::class);
     Route::get('/singleton', [SingletonController::class, 'singleExample'])->name('singleton.example');
+    Route::get("greeting/{role}", [GreetingController::class, 'showGreeting'])->name("greeting.show");
 });
 
 require __DIR__.'/auth.php';
